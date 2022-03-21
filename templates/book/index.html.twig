@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello BookController!{% endblock %}
+
+{% block body %}
+<link rel="stylesheet" type="text/css" href='/css/main.css'/>
+
+<table>
+      <tr id="header">
+        <th>Book #</th>
+        <th class="name">Title</th>
+        <th class="name">Authors</th>
+        <th></th>
+      </tr>
+      {% for book in books %}
+      <tr id="row-1">
+        <td>{{ book.bookId }}</th>
+        <td>{{ book.bookTitle }}</th>
+        <td>{{ book.bookAuthors }}</th>
+        <td class="icons-col">
+          <div class="icons-row">
+            <form action="#" method="POST">
+              <input type="hidden" name="id" value="{{ book.bookId }}" />
+              <button name="edit" formaction="{{ path('editBook') }}"><img src="img/edit.png" /></button>
+              <button name="delete" formaction="{{ path('delBook') }}"><img src="img/delete.png" /></button>
+            </form>
+          </div>
+        </th>
+      </tr>
+      {% else %}
+      <td colspan="4">No book found</td>
+      {% endfor %}
+      <tr>
+          <td colspan="3"></td>
+          <td class="icons-col">
+            <form action="{{ path('addBook') }}", method="POST">
+              <div class="icons-row">
+                <button href="#"><img src="img/plus.png" /></button>
+              </div>
+            </form>
+          </td>
+      </tr>
+    </table>
+  </body>
+  <form action="{{ path('toUser') }}" method="POST"><button>Switch to users</button></form>
+{% endblock %}

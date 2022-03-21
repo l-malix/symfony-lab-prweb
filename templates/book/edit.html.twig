@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit user!{% endblock %}
+
+{% block body %}
+    <link rel="stylesheet" type="text/css" href='/css/main.css'/>
+
+    <form action=#, method="POST">
+        <table class="user">
+      <tr>
+        <th>Book #</th>
+        {% if book.bookId != null%}
+        <td><input
+            type="text"
+            name="id"
+            id="id"
+            placeholder="id"
+            value= "{{ book.bookId }}"
+          /></td>
+          {% else %}
+                <td> NEW BOOK </td>
+            {% endif %}
+      </tr>
+      <tr>
+        <th>Title</th>
+        <td>
+          <input
+            type="text"
+            name="title"
+            id="title"
+            value= "{{ book.bookTitle }}"
+            placeholder="Book title"
+            
+          />
+        </td>
+      </tr>
+      <tr>
+        <th>Authors</th>
+        <td>
+          <input
+            type="text"
+            name="authors"
+            id="authors"
+            placeholder="Authors"
+            value= "{{ book.bookAuthors }}"
+          />
+        </td>
+      </tr>
+      <tr>
+            <td colspan="2">
+                <button type="submit" formaction="{{ path('saveBook') }}">Save</button>
+                <button formaction="{{ path('cancelEditBook') }}">Cancel</button>
+            </td>
+          </tr>
+        </table>
+    </form>
+
+{% endblock %}

@@ -1,0 +1,89 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.form-group {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 10px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  width: 25vw;
+  justify-content: center;
+}
+
+input {
+  margin: 5px 0 7px 0;
+  background-color: #f4f4f4;
+  border-radius: 3px;
+  padding: 4px;
+}
+input::placeholder {
+  font-size: 14px;
+}
+
+p {
+  font-size: 38px;
+  font-weight: bold;
+  text-align: center;
+  color: #71be3e;
+  margin: 12px;
+}
+
+button {
+  background-color: #71be3e;
+  color: white;
+  border: 0;
+  font-weight: bold;
+  padding: 4px;
+}
+
+input:focus,
+button:hover,
+button:focus {
+  outline: none;
+}
+
+/* Users */
+table {
+  border: 1px solid green;
+  color: #71be3e;
+}
+
+tr {
+  background-color: white;
+  color: forestgreen;
+}
+td {
+  border: 1px solid green;
+  color: forestgreen;
+}
+
+th {
+  background-color: yellowgreen;
+  color: white;
+}
+
+.name {
+  width: 25vw;
+}
+
+img {
+  height: 3vh;
+}
+
+.icons-col {
+  display: flex;
+  justify-content: center;
+}
+
+/* User */
+
+.user td {
+  width: 30vw;
+}
